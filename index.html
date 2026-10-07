@@ -1,0 +1,1138 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Likitha | AI & Data Science Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f7ff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #5b21b6;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5b21b6;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #312e81, #5b21b6, #2563eb);
+            color: white;
+            padding: 100px 30px 50px;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #dbeafe;
+        }
+
+        .hero-text p {
+            max-width: 650px;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 25px;
+            margin-right: 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #4c1d95;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .buttons a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE */
+        .profile {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5b21b6;
+            font-size: 100px;
+            font-weight: bold;
+            border: 8px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        /* COMMON */
+        section {
+            padding: 80px 30px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #4c1d95;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ABOUT */
+        .about {
+            background: white;
+        }
+
+        .about-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 17px;
+        }
+
+        .about-info {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info-card {
+            padding: 20px;
+            border-radius: 12px;
+            background: #f5f3ff;
+            border-left: 5px solid #5b21b6;
+        }
+
+        .info-card strong {
+            color: #4c1d95;
+        }
+
+        /* SKILLS */
+        .skills {
+            background: #f5f7ff;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(91,33,182,0.2);
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            color: #333;
+        }
+
+        /* PROJECTS */
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            border-top: 5px solid #5b21b6;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #4c1d95;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tech span {
+            background: #e9d5ff;
+            color: #581c87;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        .project-btn {
+            display: inline-block;
+            margin-top: 18px;
+            text-decoration: none;
+            background: #5b21b6;
+            color: white;
+            padding: 9px 17px;
+            border-radius: 20px;
+        }
+
+        /* EDUCATION */
+        .education {
+            background: #f5f7ff;
+        }
+
+        .education-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            border-left: 6px solid #2563eb;
+        }
+
+        .education-card h3 {
+            color: #4c1d95;
+            margin-bottom: 10px;
+        }
+
+        /* CERTIFICATIONS */
+        .certifications {
+            background: white;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cert-card {
+            padding: 25px;
+            background: #f8f9ff;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .cert-card h3 {
+            color: #4c1d95;
+        }
+
+        /* INTERNSHIP */
+        .internship {
+            background: #f5f7ff;
+        }
+
+        .internship-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        }
+
+        .internship-card h3 {
+            color: #4c1d95;
+            margin-bottom: 10px;
+        }
+
+        /* ACHIEVEMENTS */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .achievement {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .achievement h3 {
+            color: #4c1d95;
+            margin-bottom: 8px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: linear-gradient(135deg, #312e81, #5b21b6);
+            color: white;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title p {
+            color: #ddd;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info div {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 14px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #4c1d95;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .social {
+            margin-top: 10px;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 45px;
+            }
+
+            .profile {
+                width: 220px;
+                height: 220px;
+                font-size: 70px;
+            }
+
+            .skill-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid,
+            .cert-grid,
+            .achievement-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-box,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-text h2 {
+                font-size: 22px;
+            }
+
+            .skill-grid,
+            .project-grid,
+            .cert-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">Likitha<span>.</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-text">
+
+            <h4>Hello, I'm</h4>
+
+            <h1>Likitha</h1>
+
+            <h2>B.E. Artificial Intelligence & Data Science Student</h2>
+
+            <p>
+                Passionate about Artificial Intelligence, Machine Learning,
+                Data Science and transforming data into meaningful insights.
+                I am interested in developing innovative technology solutions
+                and continuously improving my technical skills.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn-primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn-secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="profile">
+            L
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>AI & Data Science Student</p>
+        </div>
+
+        <div class="about-box">
+
+            <div class="about-text">
+
+                <p>
+                    I am Likitha, a B.E./B.Tech student specializing in
+                    Artificial Intelligence and Data Science at GSSS Institute
+                    of Engineering and Technology for Women, Mysore.
+                </p>
+
+                <p>
+                    I am passionate about Python programming, Artificial
+                    Intelligence, Machine Learning, Data Analytics and
+                    visualization.
+                </p>
+
+                <p>
+                    My goal is to build a successful career in the IT industry
+                    by applying my technical knowledge to real-world problems
+                    and continuously learning new technologies.
+                </p>
+
+            </div>
+
+            <div class="about-info">
+
+                <div class="info-card">
+                    <strong>🎓 Degree</strong><br>
+                    B.E./B.Tech – Artificial Intelligence & Data Science
+                </div>
+
+                <div class="info-card">
+                    <strong>🏫 College</strong><br>
+                    GSSS Institute of Engineering and Technology for Women
+                </div>
+
+                <div class="info-card">
+                    <strong>📍 Location</strong><br>
+                    Mysore, Karnataka
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>Technologies and tools I work with</p>
+        </div>
+
+        <div class="skill-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">☕</div>
+                <h3>Java</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>C / C++</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🗄️</div>
+                <h3>SQL / MySQL</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🧠</div>
+                <h3>Machine Learning</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3>Data Science</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📈</div>
+                <h3>Power BI</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📑</div>
+                <h3>Advanced Excel</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🔢</div>
+                <h3>NumPy</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🐼</div>
+                <h3>Pandas</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📉</div>
+                <h3>Matplotlib</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+            <p>Academic and practical projects</p>
+        </div>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <h3>Student Performance Prediction</h3>
+
+                <p>
+                    A machine learning project that predicts student academic
+                    performance using relevant student-related parameters.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Machine Learning</span>
+                </div>
+
+                <a href="#" class="project-btn">GitHub</a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Sales Data Analysis</h3>
+
+                <p>
+                    Interactive business dashboard for analyzing sales,
+                    revenue, products and regional performance.
+                </p>
+
+                <div class="tech">
+                    <span>Power BI</span>
+                    <span>Excel</span>
+                    <span>DAX</span>
+                </div>
+
+                <a href="#" class="project-btn">GitHub</a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>AI Chatbot</h3>
+
+                <p>
+                    An intelligent chatbot application designed to interact
+                    with users and provide automated responses.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>NLP</span>
+                </div>
+
+                <a href="#" class="project-btn">GitHub</a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Customer Churn Prediction</h3>
+
+                <p>
+                    Machine learning model that predicts customers who are
+                    likely to discontinue a service.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>ML</span>
+                    <span>Pandas</span>
+                </div>
+
+                <a href="#" class="project-btn">GitHub</a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Image Classification</h3>
+
+                <p>
+                    AI-based project for classifying images into predefined
+                    categories using machine learning techniques.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>ML</span>
+                </div>
+
+                <a href="#" class="project-btn">GitHub</a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Student Management System</h3>
+
+                <p>
+                    Application for managing student information, academic
+                    records and basic student-related operations.
+                </p>
+
+                <div class="tech">
+                    <span>Java</span>
+                    <span>MySQL</span>
+                    <span>SQL</span>
+                </div>
+
+                <a href="#" class="project-btn">GitHub</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Education</h2>
+            <p>Academic background</p>
+        </div>
+
+        <div class="education-card">
+
+            <h3>B.E./B.Tech – Artificial Intelligence & Data Science</h3>
+
+            <p>
+                <strong>GSSS Institute of Engineering and Technology for Women</strong>
+            </p>
+
+            <p>Mysore, Karnataka</p>
+
+            <p>
+                Focus Areas: Artificial Intelligence, Machine Learning,
+                Data Science, Python, Data Analytics and Database Management.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+<section class="certifications">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Certifications</h2>
+            <p>Professional learning and certifications</p>
+        </div>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <h3>Python Programming</h3>
+                <p>Certification Placeholder</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Machine Learning</h3>
+                <p>Certification Placeholder</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Data Science</h3>
+                <p>Certification Placeholder</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Power BI</h3>
+                <p>Certification Placeholder</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Artificial Intelligence</h3>
+                <p>Certification Placeholder</p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Cloud Computing</h3>
+                <p>Certification Placeholder</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTERNSHIP -->
+<section class="internship">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Internship & Training</h2>
+            <p>Professional exposure</p>
+        </div>
+
+        <div class="internship-card">
+
+            <h3>Internship / Technical Training</h3>
+
+            <p>
+                <strong>Company:</strong> Add Company Name
+            </p>
+
+            <p>
+                <strong>Role:</strong> AI & Data Science Intern
+            </p>
+
+            <p>
+                <strong>Duration:</strong> Add Duration
+            </p>
+
+            <p>
+                <strong>Technologies:</strong>
+                Python, Machine Learning, Data Analytics,
+                SQL and Power BI
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Achievements</h2>
+            <p>Academic and technical achievements</p>
+        </div>
+
+        <div class="achievement-grid">
+
+            <div class="achievement">
+                <h3>🏆 Hackathons</h3>
+                <p>Add hackathon achievements here.</p>
+            </div>
+
+            <div class="achievement">
+                <h3>💡 Workshops</h3>
+                <p>Add technical workshops here.</p>
+            </div>
+
+            <div class="achievement">
+                <h3>🎯 Competitions</h3>
+                <p>Add coding or technical competitions here.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Me</h2>
+
+            <p>
+                Let's connect and discuss opportunities.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <div>
+                    📧 <strong>Email</strong><br>
+                    n.likitha2930@gmail.com
+                </div>
+
+                <div>
+                    📱 <strong>Phone</strong><br>
+                    7676705949
+                </div>
+
+                <div>
+                    📍 <strong>Location</strong><br>
+                    Mysore, Karnataka
+                </div>
+
+                <div>
+                    🎓 <strong>College</strong><br>
+                    GSSS Institute of Engineering and Technology for Women
+                </div>
+
+            </div>
+
+
+            <form class="contact-form" onsubmit="sendMessage(event)">
+
+                <input type="text"
+                       placeholder="Your Name"
+                       required>
+
+                <input type="email"
+                       placeholder="Your Email"
+                       required>
+
+                <input type="text"
+                       placeholder="Subject"
+                       required>
+
+                <textarea
+                    placeholder="Your Message"
+                    required></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Likitha | AI & Data Science Portfolio
+    </p>
+
+    <div class="social">
+
+        <a href="#" target="_blank">GitHub</a>
+
+        <a href="#" target="_blank">LinkedIn</a>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function sendMessage(event) {
+
+    event.preventDefault();
+
+    alert("Thank you for contacting Likitha!");
+
+}
+
+</script>
+
+</body>
+</html>
+```
